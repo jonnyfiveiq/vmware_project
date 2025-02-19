@@ -13,6 +13,7 @@
         datacenter: "Datacenter"
         name: "Test01"
         folder: "ansible"
+        template: "ansible_template"
         state: "present"
 
     - name: Gather guest info
