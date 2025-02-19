@@ -6,21 +6,21 @@
   tasks:
     - name: create VM
       community.vmware.vmware_guest:
-        hostname: "{{ vcenter_hostname }}"
-        username: "{{ vcenter_username }}"
-        password: "{{ vcenter_password }}"
+        hostname: "192.168.0.240"
+        username: "administrator@vsphere.local"
+        password: "Mildred!274"
         validate_certs: "{{ vcenter_validate_certs }}"
-        datacenter: "{{ vcenter_datacenter }}"
+        datacenter: "Datacenter"
         cluster: "{{ vcenter_cluster }}"
         template: "{{ vm_template }}"
-        name: "{{ vm_name }}"
-        folder: "{{ vcenter_destination_folder }}"
-        state: "{{ vm_state }}"
+        name: "Test01"
+        folder: "ansible"
+        state: "present"
 
     - name: Gather guest info
       vmware.vmware.guest_info:
         validate_certs: false
-        hostname: "{{ vcenter_hostname }}"
-        username: "{{ vcenter_username }}"
-        password: "{{ vcenter_password }}"
-        guest_name: "{{ vm_name }}"
+        hostname: "192.168.0.240"
+        username: "administrator@vsphere.local"
+        password: "Mildred!274"
+        guest_name: "Test01"
