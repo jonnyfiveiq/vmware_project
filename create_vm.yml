@@ -11,7 +11,6 @@
         password: "Mildred!274"
         validate_certs: "false"
         datacenter: "Datacenter"
-        template: "asible"
         name: "Test01"
         folder: "ansible"
         state: "present"
