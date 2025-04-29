@@ -6,7 +6,7 @@
   tasks:
     - name: create VM
       community.vmware.vmware_guest:
-        hostname: "192.168.0.240"
+        hostname: "192.168.0.232"
         username: "administrator@vsphere.local"
         password: "Mildred!274"
         validate_certs: "false"
