@@ -6,20 +6,23 @@
   tasks:
     - name: create VM
       community.vmware.vmware_guest:
-        hostname: "192.168.0.144"
-        username: "administrator@vsphere.local"
-        password: "Smartvm!23"
-        validate_certs: "false"
-        datacenter: "Datacenter"
-        name: "Test03"
-        folder: "ansible"
-        template: "ansible_template"
-        state: "present"
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        validate_certs: "{{ vcenter_validate_certs }}"
+        datacenter: "{{ vcenter_datacenter }}"
+        cluster: "{{ vcenter_cluster }}"
+        template: "{{ vm_template }}"
+        name: "{{ vm_name }}"
+        folder: "{{ vcenter_destination_folder }}"
+        state: "{{ vm_state }}"
 
-    - name: Gather guest info
-      vmware.vmware.guest_info:
+    - name: Set the state of a virtual machine to poweroff
+      vmware.vmware.vm_powerstate:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        datacenter: "{{ vcenter_datacenter }}"
         validate_certs: false
-        hostname: "192.168.0.144"
-        username: "administrator@vsphere.local"
-        password: "Smartvm!23"
-        guest_name: "Test03"
+        name: "{{ vm_name }}"
+        state: powered-on
