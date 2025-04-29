@@ -25,4 +25,4 @@
         datacenter: "{{ vcenter_datacenter }}"
         validate_certs: false
         name: "{{ vm_name }}"
-        state: powered-on
+        state: powered-off
