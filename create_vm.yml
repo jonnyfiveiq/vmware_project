@@ -12,11 +12,11 @@
         validate_certs: "{{ vcenter_validate_certs }}"
         datacenter: "{{ vcenter_datacenter }}"
         cluster: "{{ vcenter_cluster }}"
-        template: "{{ vm_template }}"
         name: "{{ vm_name }}"
-        folder: "{{ vcenter_destination_folder }}"
         state: "{{ vm_state }}"
-
+        folder: "ansible"
+        template: "ansible_template"
+        
     - name: Set the state of a virtual machine to poweroff
       vmware.vmware.vm_powerstate:
         hostname: "{{ vcenter_hostname }}"
