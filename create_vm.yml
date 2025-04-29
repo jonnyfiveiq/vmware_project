@@ -11,7 +11,7 @@
         password: "{{ vcenter_password }}"
         validate_certs: "{{ vcenter_validate_certs }}"
         datacenter: "{{ vcenter_datacenter }}"
-        cluster: "{{ vcenter_cluster }}"
+        #cluster: "{{ vcenter_cluster }}"
         name: "{{ vm_name }}"
         state: "{{ vm_state }}"
         folder: "ansible"
