@@ -14,8 +14,8 @@
         #cluster: "{{ vcenter_cluster }}"
         name: "{{ vm_name }}"
         state: "{{ vm_state }}"
-        folder: "ansible"
-        template: "ansible_template"
+        folder: "{{ vcenter_destination_folder }}"
+        template: "{{ vm_template }}"
         
     - name: Set the state of a virtual machine to poweroff
       vmware.vmware.vm_powerstate:
