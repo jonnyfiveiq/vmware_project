@@ -12,7 +12,7 @@
         validate_certs: "{{ vcenter_validate_certs }}"
         datacenter: "{{ vcenter_datacenter }}"
         #cluster: "{{ vcenter_cluster }}"
-        name: "{{ vm_name }}"
+        name: "{{ vmname }}"
         state: "{{ vm_state }}"
         folder: "{{ vcenter_destination_folder }}"
         template: "{{ vm_template }}"
