@@ -1,4 +1,4 @@
 collections:
-  - name: https://github.com/jonnyfiveiq/vmware.vmware.git
+  - name: https://github.com/jonnyfiveiq/vmware.vmware
     type: git
     version: master
