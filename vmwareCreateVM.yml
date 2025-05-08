@@ -3,49 +3,28 @@
   hosts: localhost
   become: false
   gather_facts: false
-  vars:
-    vcenter_hostname: {{ vcenter_hostname }}
-    vcenter_username: {{ vcenter_username }}
-    vcenter_password: {{ vcenter_password }}
-    validate_certs: false
-
-    data center_name: {{ vcenter_datacenter }}
-    cluster_name: {{ vcenter_cluster }}
-    datastore_name: "datastore1"
-    template_name: {{ vm_template }}
-    vm_name: {{ vmname }} 
-    vm_folder: ""
-    vm_network: "VM Network"
-    vm_cpu_count: 2
-    vm_memory_mb: 4096
-    vm_disk_size_gb: 20
   tasks:
     - name: Clone VM from template
       vmware_guest:
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
-        validate_certs: "{{ validate_certs }}"
-        datacenter: "{{ datacenter_name }}"
-        folder: "{{ vm_folder }}"
-        name: "{{ vm_name }}"
-        template: "{{ template_name }}"
-        cluster: "{{ cluster_name }}"
-        datastore: "{{ datastore_name }}"
+        validate_certs: false
+        datacenter: "{{ vcenter_datacenter }}"
+        folder: ""
+        name: "{{ vmname }}"
+        template: "{{ vm_template }}"
+        cluster: "{{ vcenter_cluster }}"
+        datastore: "datastore1"
         state: poweredon
         hardware:
-          memory_mb: "{{ vm_memory_mb }}"
-          num_cpus: "{{ vm_cpu_count }}"
+          memory_mb: "4096}"
+          num_cpus: "1"
         networks:
-          - name: "{{ vm_network }}"
-            type: static
-            ip: "192.168.1.100"
-            netmask: "255.255.255.0"
-            gateway: "192.168.1.1"
-            dns_servers:
-              - "8.8.8.8"
+          - name: "VM Network"
+            type: dynamic
         disk:
-          - size_gb: "{{ vm_disk_size_gb }}"
+          - size_gb: "1"
             type: thin
-            datastore: "{{ datastore_name }}"
+            datastore: "datastore1"
       delegate_to: localhost
