@@ -22,7 +22,7 @@
           num_cpus: "1"
         networks:
           - name: "VM Network"
-            type: dynamic
+            type: dhcp
         disk:
           - size_gb: "1"
             type: thin
