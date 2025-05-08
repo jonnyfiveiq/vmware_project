@@ -20,7 +20,7 @@
     vm_memory_mb: 4096
     vm_disk_size_gb: 20
   tasks:
-  - name: Clone VM from template
+    - name: Clone VM from template
       vmware_guest:
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
