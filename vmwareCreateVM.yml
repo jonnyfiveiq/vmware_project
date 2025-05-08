@@ -18,7 +18,7 @@
         datastore: "datastore1"
         state: poweredon
         hardware:
-          memory_mb: "4096}"
+          memory_mb: "4096"
           num_cpus: "1"
         networks:
           - name: "VM Network"
