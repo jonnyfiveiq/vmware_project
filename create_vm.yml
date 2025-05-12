@@ -44,5 +44,4 @@
         datacenter: "{{ vcenter_datacenter }}"
         name: "{{ vmname }}"
         state: absent
-        delete_from_disk: true
       delegate_to: localhost
