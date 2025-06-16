@@ -26,6 +26,9 @@
         validate_certs: false
         name: "{{ vmname }}"
         state: powered-off
+      register: vm_power
+    
+    - debug: var=vm_power
 
     - name: Gather guest vm info
       vmware.vmware.guest_info:
