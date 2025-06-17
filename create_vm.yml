@@ -16,6 +16,9 @@
         state: "{{ vm_state }}"
         folder: "{{ vcenter_destination_folder }}"
         template: "{{ vm_template }}"
+      register: create_vm
+
+    - debug: var=create_vm
         
     - name: Set the state of a virtual machine to poweroff
       vmware.vmware.vm_powerstate:
