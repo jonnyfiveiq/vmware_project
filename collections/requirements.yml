@@ -2,3 +2,6 @@ collections:
   - name: https://github.com/jonnyfiveiq/vmware.vmware.git
     type: git
     version: main
+  - name: https://github.com/jonnyfiveiq/community.vmware.git
+    type: git
+    version: main
