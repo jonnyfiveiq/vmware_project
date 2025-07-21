@@ -2,7 +2,7 @@
 - name: create vm from a template
   hosts: localhost
   become: false
-  gather_facts: false
+  gather_facts: true
   tasks:
     - name: create VM
       community.vmware.vmware_guest:
