@@ -16,6 +16,7 @@
         state: "{{ vm_state }}"
         folder: "{{ vcenter_destination_folder }}"
         template: "{{ vm_template }}"
+        esxi_hostname: "{{ target_esxi_hostname }}
       register: create_vm
 
     - debug: var=create_vm
