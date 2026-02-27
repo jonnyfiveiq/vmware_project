@@ -1,6 +1,7 @@
 ---
 - name: Debug Hello World Playbook
   gather_facts: true
+  hosts: all
 
   tasks:
     - name: Print Hello World message
