@@ -1,6 +1,5 @@
 ---
 - name: Debug Hello World Playbook
-  hosts: Controller1.aap.com
   gather_facts: true
 
   tasks:
