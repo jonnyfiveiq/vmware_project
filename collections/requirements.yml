@@ -1,1 +1,4 @@
-
+collections:
+  - name: vmware.vmware
+  - name: community.vmware
+    source: https://galaxy.ansible.com
